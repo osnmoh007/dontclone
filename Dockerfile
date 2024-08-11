@@ -1,5 +1,5 @@
-# Use the official Alpine base image
-FROM stilleshan/hideipnetwork-web
+# Use the official Ubuntu base image
+FROM ubuntu:latest
 
 # Create the /app directory
 RUN mkdir -p /app
@@ -8,7 +8,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Update the package list and install necessary packages
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     screen \
     htop \
     nano \
