@@ -22,6 +22,10 @@ COPY entrypoint.sh /app2/
 # Make the entrypoint script executable
 RUN chmod +x entrypoint.sh
 
+#HideMyIP commands
+WORKDIR /app
+CMD ["npm", "run", "start"]
+
 # Use the custom entrypoint script
 ENTRYPOINT ["/app2/entrypoint.sh"]
 
