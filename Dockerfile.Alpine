@@ -1,11 +1,11 @@
 # Use the official Alpine base image
 FROM stilleshan/hideipnetwork-web
 
-# Create the /app directory
-RUN mkdir -p /app
+# Create the /app2 directory
+RUN mkdir -p /app2
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /app2
 
 # Install necessary packages
 RUN apk add --no-cache \
@@ -17,12 +17,12 @@ RUN apk add --no-cache \
     tar
 
 # Copy the local entrypoint script into the container
-COPY entrypoint.sh /app/
+COPY entrypoint.sh /app2/
 
 # Make the entrypoint script executable
 RUN chmod +x entrypoint.sh
 
 # Use the custom entrypoint script
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app2/entrypoint.sh"]
 
 EXPOSE 56559
