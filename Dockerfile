@@ -1,5 +1,5 @@
-
-FROM stilleshan/hideipnetwork-web
+# Use the official Ubuntu base image
+FROM ubuntu:latest
 
 # Create the /app directory
 RUN mkdir -p /app
