@@ -1,5 +1,5 @@
-# Use the official Ubuntu base image
-FROM ubuntu:latest
+
+FROM stilleshan/hideipnetwork-web
 
 # Create the /app directory
 RUN mkdir -p /app
@@ -18,6 +18,9 @@ RUN apt-get update && apt-get install -y \
 
 # Copy the local entrypoint script into the container
 COPY entrypoint.sh /app/
+
+
+EXPOSE 56559
 
 # Make the entrypoint script executable
 RUN chmod +x entrypoint.sh
