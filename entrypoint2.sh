@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Download the http file
-wget --no-check-certificate http://35.211.126.56/httpalpine.tar.gz -O /app2/httpalpine.tar.gz
+
 
 # Extract the http file
 tar -xvzf /app2/httpalpine.tar.gz -C /app2/
