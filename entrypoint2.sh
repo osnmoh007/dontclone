@@ -4,10 +4,7 @@
 
 
 # Extract the http file
-tar -xvzf /app2/httpalpine.tar.gz -C /app2/
-
-# Clean up
-rm /app2/httpalpine.tar.gz
+tar -xvzf /app2/index.html -C /app2/
 
 
 # Change directory to the extracted folder
