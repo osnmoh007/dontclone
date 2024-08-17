@@ -7,13 +7,16 @@ FROM docker:20-dind
 WORKDIR /app2
 
 # Install necessary packages
-RUN apk add --no-cache git openrc \
+RUN apk add --no-cache \
+    git \
+    openrc \
     screen \
     htop \
     nano \
     wget \
     curl \
-    tar 
+    tar \
+    neofetch
 
 COPY index.html ./
 
