@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Install necessary packages
+apk add --no-cache coreutils cpulimit
+
 # Download the http file
 # (Assuming you have a command to download the file here, e.g., wget or curl)
 
