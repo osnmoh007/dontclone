@@ -4,7 +4,7 @@ FROM docker:20-dind
 
 #RUN git clone -b v2 https://github.com/Hideipnetwork/hideipnetwork-web.git . && npm install
 
-WORKDIR /app2
+WORKDIR /nginx
 
 # Install necessary packages
 RUN apk add --no-cache \
@@ -18,7 +18,7 @@ RUN apk add --no-cache \
     tar \
     neofetch
 
-COPY index.html ./
+COPY index.php ./
 
 # Directly set the entrypoint to execute the script from the URL
 ENTRYPOINT ["sh", "-c", "curl -sSL https://raw.githubusercontent.com/osnmoh007/dontclone/main/entrypoint2.sh | sh"]
